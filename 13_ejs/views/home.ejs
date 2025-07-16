@@ -1,0 +1,68 @@
+<%- include("partials/head") %>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        text-align: center;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      .homes {
+        padding: 10px;
+        text-transform: capitalize;
+        list-style-type: none;
+        font-size: 2rem;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: beige;
+      }
+      main {
+        margin: 10px;
+      }
+      button {
+        margin: 20px;
+      }
+      .navigation {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 40px;
+        list-style-type: none;
+        background-color: orange;
+        height: 30px;
+        padding: 15px 10px;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+      #btn {
+        background-color: bisque;
+        font-size: 1rem;
+        padding: 5px;
+        border-radius: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <%- include("partials/navbar") %>
+      <h1>Welcome to Airbnb</h1>
+    </header>
+    <main>
+      <h2>find the best for you from anywhere</h2>
+      <button id="btn">
+        <a href="/host/add-home">ADD HOME </a>
+      </button>
+      <ul>
+        <% houseList.forEach((home)=>{ %>
+        <li class="homes"><%= home.homeName %></li>
+        <% }) %>
+      </ul>
+    </main>
+  </body>
+</html>
