@@ -1,0 +1,58 @@
+<%- include("partials/head") %>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        text-align: center;
+      }
+      .navigation {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 40px;
+        list-style-type: none;
+        background-color: orange;
+        height: 30px;
+        padding: 15px 10px;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      #home{
+        margin-top: 15px;
+        font-size: 1.3rem;
+        padding: 0.5rem 1rem;
+      }
+      #done{
+        font-size: 1.3rem;
+        padding: 0.5rem 1rem;
+        background-color: bisque;
+        border-radius: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <%- include("partials/navbar") %>
+      <h1>Enter your Home Details</h1>
+    </header>
+    <main>
+      <form action="/host/add-home" method="POST">
+        <input
+        id="home"
+          type="text"
+          name="homeName"
+          placeholder="Enter Home name"
+        /><br /><br />
+        <input type="submit" value="DONE" id="done"/>
+      </form>
+    </main>
+  </body>
+</html>
