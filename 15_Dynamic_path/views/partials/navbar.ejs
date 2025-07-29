@@ -1,0 +1,46 @@
+<nav>
+  <ul class="navigation">
+    <li>
+      <a
+        href="/"
+        class="nav-item <%= currentPage === 'index' ? 'activeTab' : ''%>"
+        >AIRBNB</a
+      >
+    </li>
+    <li>
+      <a
+        href="/homes"
+        class="nav-item <%= currentPage === 'home-list' ? 'activeTab' : ''%>"
+        >HOMES LIST</a
+      >
+    </li>
+    <li>
+      <a
+        href="/bookings"
+        class="nav-item <%= currentPage === 'bookings' ? 'activeTab' : ''%>"
+        >BOOKINGS</a
+      >
+    </li>
+    <li>
+      <a
+        href="/favourites"
+        class="nav-item <%= currentPage === 'favourite-list' ? 'activeTab' : ''%>"
+        >FAVOURITES</a
+      >
+    </li>
+    <li>
+      <a
+        href="/host/host-homes"
+        class="nav-item <%= currentPage === 'host-home-list' ? 'activeTab' : ''%>"
+        >HOST HOMES LIST</a
+      >
+    </li>
+    <li>
+      <a
+        href="/host/add-home"
+        class="nav-item <%= currentPage === 'add-home' ? 'activeTab' : ''%>"
+        >ADD HOME</a
+      >
+    </li>
+  </ul>
+</nav>
