@@ -1,0 +1,33 @@
+<%- include("../partials/head") %>
+  <body>
+    <header>
+      <%- include("../partials/navbar") %>
+      <h1>Welcome to Airbnb</h1>
+    </header>
+    <main>
+      <h2>find the best for you from anywhere</h2>
+      <button id="btn">
+        <a href="/host/add-home">ADD HOME </a>
+      </button>
+      <div class="home-card">
+          <% houseList.forEach((home)=>{ %>
+          <div class="card" style="width: 18rem;">
+            <img src="<%= home.homeUrl%>" class="card-img-top" alt="home Image">
+            <div class="card-body">
+              <h5 class="home-title"><%= home.homeName %></h5>
+              <p class="home-location">Location : <%= home.homeLocation %></p>
+              <p>Rating : <span class="badge text-bg-secondary"><%= home.homeRating %> ⭐</span></p>
+              <a href="#" class="btn btn-primary">₹ <%= home.homePrice %></a>
+              <div>
+                  <form action="/favourites" id="add-fav-form" method="post">
+                    <button type="submit" class="btn btn-warning px-3">❤️ ADD TO FAVOURITES</button>
+                    <input type="hidden" name="homeId" value="<%= home.homeId%>">
+                  </form>
+                </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+    </main>
+  </body>
+</html>
