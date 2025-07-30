@@ -1,0 +1,29 @@
+<%- include("../partials/head") %>
+  <body>
+    <header>
+      <%- include("../partials/navbar") %>
+      <h1>My Favourites</h1>
+    </header>
+    <main>
+      <h2>Here is your favourites airbnb list </h2>
+      <div class="home-card">
+          <% favouriteHomesList.forEach((home)=>{ %>
+          <div class="card" style="width: 18rem;">
+            <img src="<%= home.homeUrl%>" class="card-img-top" alt="home Image">
+            <div class="card-body">
+              <h5 class="home-title"><%= home.homeName %></h5>
+              <p class="home-location">Location : <%= home.homeLocation %></p>
+              <p>Rating : <span class="badge text-bg-secondary"><%= home.homeRating %> ⭐</span></p>
+              <a href="#" class="btn btn-primary">₹ <%= home.homePrice %></a>
+              <button type="button" class="btn btn-success">Book</button>
+              <form action="/favourites/delete/<%= home.homeId%>" method="post">
+                <button type="submit" class="btn btn-warning py-1 my-2">
+                  <i class="fa-solid fa-trash"></i> REMOVE</button>
+              </form>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+    </main>
+  </body>
+</html>
