@@ -1,0 +1,29 @@
+<%- include("../partials/head") %>
+  <body>
+    <header>
+      <%- include("../partials/navbar") %>
+    </header>
+    <main>
+      <div class="home">
+          <div class="home-details">
+            <img src="<%= home.homeUrl%>" alt="home Image" class="home-img">
+            <div class="home-card-body">
+              <div class="texts">
+                <h5 class="home-name"><%= home.homeName %></h5>
+                <p class="home-location">Location : <%= home.homeLocation %></p>
+                <p class="home-rating">Rating : <span class="badge text-bg-secondary"><%= home.homeRating %> ⭐</span></p>
+              </div>
+              <div class="buttons">
+                <h4 class="my-2 mx-5 home-price">price : <span id="price">₹ <%= home.homePrice %></span></h4>
+                <div>
+                  <form action="/favourites" id="add-fav-form" method="post">
+                    <button type="submit" class="btn btn-warning mx-2 px-5">❤️ ADD TO FAVOURITES</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </main>
+  </body>
+</html>
