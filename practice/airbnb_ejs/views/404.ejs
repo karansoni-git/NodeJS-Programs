@@ -1,0 +1,46 @@
+<%- include("partials/head") %>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        text-align: center;
+      }
+      .navigation {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 40px;
+        list-style-type: none;
+        background-color: orange;
+        height: 30px;
+        padding: 15px 10px;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+      button{
+        margin-top: 15px;
+        background-color: bisque;
+        font-size: 1rem;
+        padding: 5px;
+        border-radius: 7px;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <%- include("partials/navbar") %>
+      <h1>404 Page Is Not Found</h1>
+    </header>
+    <main>
+      <button><a href="/">GO TO HOME</a></button>
+    </main>
+  </body>
+</html>
