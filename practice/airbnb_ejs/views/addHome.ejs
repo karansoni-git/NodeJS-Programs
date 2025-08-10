@@ -1,0 +1,103 @@
+<%- include("partials/head") %>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        text-align: center;
+      }
+      .navigation {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 40px;
+        list-style-type: none;
+        background-color: orange;
+        height: 30px;
+        padding: 15px 10px;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      label{
+        font-size: 1.3rem;
+      }
+      .home-details{
+        margin-top: 15px;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+      }
+      #done{
+        font-size: 1.3rem;
+        padding: 0.5rem 1rem;
+        background-color: bisque;
+        border-radius: 7px;
+        width:100px;
+        margin-top: 20px;
+      }
+      form{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+      .input{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <%- include("partials/navbar") %>
+      <h1>Enter your Home Details</h1>
+    </header>
+    <main>
+      <form action="/host/add-home" method="POST">
+        <div class="homeName input">
+          <label for="homeName">Home Name:</label>
+          <input
+          class="home-details"
+          type="text"
+          name="homeName"
+          placeholder="Enter Home name"
+          />
+        </div>
+        <div class="homePrice input">
+          <label for="homePrice">Home Price:</label>
+          <input type="number" id="homePrice" name="homePrice" class="home-details"
+          placeholder="Enter Home Price">
+        </div>
+        <div class="homeLocation input">
+          <label for="homeLocation">Home Location:</label>
+          <input type="text" id="homeLocation" name="homeLocation" class="home-details"
+          placeholder="Enter Home Location">
+        </div>
+        <div class="homeUrl input">
+          <label for="homeUrl">Home Image Url:</label>
+          <input type="text" id="homeUrl" name="homeUrl" class="home-details"
+          placeholder="Enter Home Image Url">
+        </div>
+        <div class="homeRating input">
+          <label for="homeRating">Home Rating ⭐:</label>
+          <input type="number" id="homeRating" name="homeRating" class="home-details"
+          placeholder="Enter Home Rating" min="0" max="5" step="0.1" value="1">
+        </div>
+        <div class="submit">
+          <input type="submit" value="DONE" id="done"/>
+        </div>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
