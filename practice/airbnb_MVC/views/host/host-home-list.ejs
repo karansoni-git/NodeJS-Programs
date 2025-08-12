@@ -1,0 +1,28 @@
+<%- include("../partials/head") %>
+  <body>
+    <header>
+      <%- include("../partials/navbar") %>
+      <h1>Hey Host!</h1>
+    </header>
+    <main>
+      <h2>Here Is Your Homes List</h2>
+      <div class="home-card">
+          <% houseList.forEach((home)=>{ %>
+          <div class="card" style="width: 18rem;">
+            <img src="<%= home.homeUrl%>" class="card-img-top" alt="home Image">
+            <div class="card-body">
+              <h5 class="home-title"><%= home.homeName %></h5>
+              <p class="home-location">Location : <%= home.homeLocation %></p>
+              <p>Rating : <span class="badge text-bg-secondary"><%= home.homeRating %> ⭐</span></p>
+              <a href="#" class="btn btn-primary">₹ <%= home.homePrice %></a>
+              <div>
+              <button type="button" class="btn btn-warning mx-2">EDIT</button>
+              <button type="button" class="btn btn-danger mx-2">DELETE</button>
+              </div> 
+            </div>
+          </div>
+          <% }) %>
+        </div>
+    </main>
+  </body>
+</html>
